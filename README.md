@@ -96,7 +96,7 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 
 21. インストールが完了。
 
-#### - javaのインストールとPATH設定
+#### - javaのインストール
 1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
 2. ダウンロードディレクトリに保存された「jre-8u401-windows-x64.exe」をダブルクリック
 3. 「はい」をクリック
