@@ -28,8 +28,7 @@
 ## bulk RNA-Seq解析ハンズオントレーニング
 ## 環境構築
 ### Windows 11
-
-WindowsでUnix環境を構築するため、Cygwinを使用します。
+Windows 11でUnix環境を構築するため、Cygwinを使用します。
 #### - Cygwinのインストール
 1. [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html)にアクセス
 2. 「setup-x86_64.exe」をクリックし、setup-x86_64.exeをダウンロード
@@ -96,6 +95,13 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 
 21. インストール完了。
 
+####
+ホームディレクトリ下に作業ディレクトリを作成
+```
+cd
+mkdir bulksem
+```
+
 #### - NCBI SRA Toolkitのインストール
 1. [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip)にアクセスし、```sratoolkit.3.0.10-win64.zip```をダウンロードします。
 2. ```ダウンロード```ディレクトリに保存された```sratoolkit.3.0.10-win64.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
@@ -159,6 +165,26 @@ tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 解凍後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。
 
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
+
+### macOS
+macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
+また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
+####
+ホームディレクトリ下に作業ディレクトリを作成
+```
+cd
+mkdir bulksem
+```
+
+#### - NCBI SRA Toolkitのインストール
+1. [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-x86_64.tar.gz](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-x86_64.tar.gz)にアクセスし、```sratoolkit.3.0.10-mac-x86_64.tar.gz```をダウンロードします。
+
+[https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz)
+
+#### - HISAT2のインストール
+[https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)
+#### - featureCountsのインストール
+[https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
