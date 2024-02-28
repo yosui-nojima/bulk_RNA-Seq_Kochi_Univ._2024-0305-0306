@@ -89,7 +89,7 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。\
 
 <img width="470" alt="スクリーンショット 2024-02-28 12 33 28" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/0f4ef331-f474-4cda-8e69-28731e774a13">
 
-20. 再びダウンロードが開始されます。２時間以上かかります。
+20. 再びダウンロードが開始されます。合計で２、３時間かかります。
 
 <img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
 
