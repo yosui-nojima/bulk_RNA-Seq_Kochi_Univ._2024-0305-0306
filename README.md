@@ -51,7 +51,7 @@ Windows 11でUnix環境を構築するため、Cygwinを使用します。
 
 8. 下記のように選択し、「次へ」をクリック。ただし、画面上の```xxx```は任意のユーザー名に変更すること。
 
-<img width="491" alt="スクリーンショット 2024-02-28 10 25 08" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/7576a11b-3215-482a-a51c-d2b7dbce6f67">
+<img width="492" alt="スクリーンショット 2024-02-28 10 26 05" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/e168c8b3-7890-47ff-8451-54259a7ceba0">
 
 9. 下記のように選択し、「次へ」をクリック
 
