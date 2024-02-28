@@ -120,6 +120,7 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
+cd
 unzip ~/hisat2-2.2.1-source.zip
 cd ~/hisat2-2.2.1
 make
@@ -135,6 +136,7 @@ make
 2. ```ダウンロード```ディレクトリに保存された```subread-2.0.6-Windows-x86_64.tar.gz```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
+cd
 tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 ```
 コンパイル後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。\
