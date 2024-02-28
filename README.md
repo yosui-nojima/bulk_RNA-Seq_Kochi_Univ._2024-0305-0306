@@ -119,6 +119,7 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
 2. 下記コマンドを実行
 ```
+unzip ~/hisat2-2.2.1-source.zip
 cd ~/hisat2-2.2.1
 make
 ```
