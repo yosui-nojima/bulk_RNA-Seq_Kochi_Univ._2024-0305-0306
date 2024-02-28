@@ -26,6 +26,16 @@
 下記よりダウンロード下さい。
 
 ## bulk RNA-Seq解析ハンズオントレーニング
+## 環境構築
+### Windows 10 or Windows 11
+WindowsでUnix環境を構築するため、Cygwinを使用します。\
+- Cygwinのインストール
+1. [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html)にアクセス
+2. 「setup-x86_64.exe」をクリックし、setup-x86_64.exeをダウンロード
+3. ダウンロードディレクトリに保存された「setup-x86_64.exe」をダブルクリック
+4. 「はい」をクリック
+5. 「次へ」をクリック
+6. 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
 今回のセミナー用に公共データから１サンプル１０万リードランダムサンプリングしたものです。\
