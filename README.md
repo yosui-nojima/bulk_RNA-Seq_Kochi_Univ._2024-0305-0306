@@ -22,34 +22,13 @@
 10:30-12:00　bulk RNA-Seq解析ハンズオントレーニング\
 13:00-18:00　bulk RNA-Seq解析ハンズオントレーニング
 
-## インストール
-- Unix\
-SRA Toolkit、Trimmomatic、HISAT2、featureCountsはbinary fileをダウンロードして下さい。コンパイルなしでパスを指定するだけで実行できます。\
-FastQCはソースコードをダウンロードし、コンパイルすることでコマンド操作で実行できます。またアプリケーションとしても公開されています。\
-Trimmomaticの動作確認は、下記のコマンドを実行してください。（Trimmomaticのディレクトリをホームディレクトに入れている場合です。）\
+## 統計基礎講義資料
+下記よりダウンロード下さい。
 
-- Windows\
-Cygwinを利用する場合は、Trimmomaticの実行にJava、HISAT2の実行にPerlが必要です。それぞれインストールして下さい。
-- R & RStudio\
-Rのインストール\
-https://www.r-project.org/ からダウンロードして下さい。\
-RStudioのインストール\
-https://www.rstudio.com/products/rstudio/ からダウンロードして下さい。\
-下記は必要なRパッケージをインストールするRスクリプトです。
-```
-install.packages("BiocManager")
-install.packages("ggplot2")
-install.packages("reshape2")
-BiocManager::install("GenomicFeatures")
-BiocManager::install("clusterProfiler")
-BiocManager::install("biomaRt")
-BiocManager::install("org.Hs.eg.db")
-BiocManager::install("DOSE")
-```
-
+## bulk RNA-Seq解析ハンズオントレーニング
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
-今回のPBL用に公共データから１サンプル１０万リードランダムサンプリングしたものです。\
+今回のセミナー用に公共データから１サンプル１０万リードランダムサンプリングしたものです。\
 ダウンロードして作業ディレクトリに保存して下さい。\
 [sample1_1_100K.fastq.gz](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_1_100K.fastq.gz)\
 [sample1_2_100K.fastq.gz](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_2_100K.fastq.gz)\
