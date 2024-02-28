@@ -28,8 +28,9 @@
 ## bulk RNA-Seq解析ハンズオントレーニング
 ## 環境構築
 ### Windows 10 or Windows 11
+
 WindowsでUnix環境を構築するため、Cygwinを使用します。
-- Cygwinのインストール
+#### - Cygwinのインストール
 1. [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html)にアクセス
 2. 「setup-x86_64.exe」をクリックし、setup-x86_64.exeをダウンロード
 3. ダウンロードディレクトリに保存された「setup-x86_64.exe」をダブルクリック
@@ -92,6 +93,31 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 20. 再びダウンロードが開始されます。合計で２、３時間かかります。
 
 <img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
+
+21. インストールが完了し、Cygwinを起動すると以下の画面が確認できる。
+
+#### - javaのインストールとPATH設定
+1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
+2. javaは、```C:\Program Files\Java\jre1.8\bin```に格納されている場合と、```C:\Program Files (x86)\Java\jre1.8\bin```に格納されている場合があるため、各自の端末で確認して下さい。また、インストールした（されている）javaのバージョンによっては、```jre1.8```も異なる場合があります。適宜書き換えて
+3. Cygwinを起動し、下記コマンドを実行。
+```emacs .bash_profile```
+```.bash_profile```の最後に下記を書き加える。インストールした（されている）javaのバージョンによっては、```jre1.8```も異なる場合があります。適宜書き換えて下さい。
+- javaが```C:\Program Files\Java\jre1.8.0\bin```に格納されている場合
+```
+PATH=$PATH:"/cygdrive/C/Program Files/Java/jre1.8/bin"
+export PATH
+```
+- javaが```C:\Program Files (x86)\Java\jre1.8\bin```に格納されている場合
+```
+PATH=$PATH:"/cygdrive/C/Program Files/Java/jre1.8/bin"
+export PATH
+```
+4. 書き加えた後、\
+```x```+```s```
+```x```+```c```
+の順でキーを押し、設定を保存する。
+5. Cygwinを終了し、再度起動する。
+6. ```java -version```とコマンドを実行し、下記のメッセージが表示されればjavaのPATHが通っています。
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
