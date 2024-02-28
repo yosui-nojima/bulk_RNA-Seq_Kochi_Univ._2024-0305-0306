@@ -93,10 +93,11 @@ Windows 11でUnix環境を構築するため、Cygwinを使用します。
 
 <img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
 
-21. インストール完了。
+21. 完了をクリック。
+<img width="491" alt="スクリーンショット 2024-02-28 13 06 56" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/ed88ba1f-1aae-418a-a8cd-ee331115c4f1">
 
 ####
-ホームディレクトリ下に作業ディレクトリを作成
+Cygwinを起動し、ホームディレクトリ下に作業ディレクトリを作成するため、下記のコマンドを実行
 ```
 cd
 mkdir bulksem
@@ -170,7 +171,7 @@ tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
 また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
 ####
-ホームディレクトリ下に作業ディレクトリを作成
+ホームディレクトリ下に作業ディレクトリを作成するため、下記のコマンドを実行
 ```
 cd
 mkdir bulksem
