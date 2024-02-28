@@ -117,7 +117,8 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 
 #### - HISAT2のインストールとコンパイル
 1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
-2. 下記コマンドを実行
+2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+3. 下記コマンドを実行
 ```
 unzip ~/hisat2-2.2.1-source.zip
 cd ~/hisat2-2.2.1
