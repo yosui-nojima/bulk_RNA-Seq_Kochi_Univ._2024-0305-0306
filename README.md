@@ -94,10 +94,26 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 
 <img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
 
-21. インストールが完了し、Cygwinを起動すると以下の画面が確認できる。
+21. インストールが完了。
 
 #### - javaのインストールとPATH設定
-Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
+1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
+2. ダウンロードディレクトリに保存された「jre-8u401-windows-x64.exe」をダブルクリック
+3. 「はい」をクリック
+
+<img width="457" alt="スクリーンショット 2024-02-28 13 10 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/fbba5ae2-01c9-46ab-8ae9-25bffd708a8d">
+
+4. 「インストール」をクリック
+
+<img width="702" alt="スクリーンショット 2024-02-28 13 11 15" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/35a4ee42-679b-4800-82e9-8ad993bf23ab">
+
+5. インストール中
+
+<img width="701" alt="スクリーンショット 2024-02-28 13 11 22" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/698f0543-af61-4b24-a251-5373f1cf87f7">
+
+6. 「閉じる」をクリック
+
+<img width="702" alt="スクリーンショット 2024-02-28 13 11 39" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/5d12a527-4d93-49d7-93b0-91f8ab73668f">
 
 #### - HISAT2のインストールとコンパイル
 1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
