@@ -49,13 +49,19 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。\
 
 <img width="491" alt="スクリーンショット 2024-02-28 10 25 08" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/7576a11b-3215-482a-a51c-d2b7dbce6f67">
 
-12. 下記のように選択し、「次へ」をクリック。ただし、画面上の'''xxx'''は任意のユーザー名に変更すること。
+12. 下記のように選択し、「次へ」をクリック。ただし、画面上の```xxx```は任意のユーザー名に変更すること。
 
 <img width="491" alt="スクリーンショット 2024-02-28 10 25 08" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/7576a11b-3215-482a-a51c-d2b7dbce6f67">
 
 14. 下記のように選択し、「次へ」をクリック
-15. 日本のミラーサーバーを選択し、「次へ」をクリック
-16. Cygwinはデフォルトでは、必要最低限のパッケージしかインストールしてくれません。解析に必要なパッケージを個別に指定してインストールします。指定するパッケージは下記の８つです。該当するパッケージの'''Default'''をプルダウンで'''Install'''に変更します。
+
+<img width="492" alt="スクリーンショット 2024-02-28 10 26 21" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/fb307fb7-54af-476b-b71c-3169d0308cc8">
+
+16. 日本のミラーサーバーを選択し、「次へ」をクリック
+
+<img width="489" alt="スクリーンショット 2024-02-28 11 03 46" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/5b49fc79-2bbc-447c-b856-0afda5423a6d">
+
+18. Cygwinはデフォルトでは、必要最低限のパッケージしかインストールしてくれません。解析に必要なパッケージを個別に指定してインストールします。指定するパッケージは下記の８つです。該当するパッケージの```Default```をプルダウンで```Install```に変更します。
 - Admin
 - Archive
 - Base
@@ -64,11 +70,28 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。\
 - Graphics
 - Libs
 - Perl
+
+<img width="1440" alt="スクリーンショット 2024-02-28 11 14 00" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/f5412eb3-35a2-43bf-bfe3-24bcd52b2c1d">
+
 12. 下記のように選択し、「次へ」をクリック
-13. 「次へ」をクリック
-14. ダウンロードが開始されます。１時間以上かかります。
-15. 下記のようにダウンロードが完了しなかったパッケージが表示されることがあります。この場合は、「Retry」を選択し、再度インストールを開始します。
-16. 再びダウンロードが開始されます。
+
+<img width="487" alt="スクリーンショット 2024-02-28 11 16 57" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/d5697f6f-d667-43fb-aa48-868c5546acb5">
+
+14. 「次へ」をクリック
+
+<img width="489" alt="スクリーンショット 2024-02-28 11 17 09" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/ea1edca7-4541-44be-9eea-c67709d67424">
+
+16. ダウンロードが開始されます。
+
+<img width="491" alt="スクリーンショット 2024-02-28 11 18 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/85d79fff-bac2-4263-9329-cf1af7b2eb62">
+
+18. 下記のようにダウンロードが完了しなかったパッケージが表示されることがありますので、ダウンロードが進んでいるか定期的にチェックして下さい。表示された場合は、「Retry」を選択し、再度インストールを開始します。
+
+<img width="470" alt="スクリーンショット 2024-02-28 12 33 28" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/0f4ef331-f474-4cda-8e69-28731e774a13">
+
+20. 再びダウンロードが開始されます。２時間以上かかります。
+
+<img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
