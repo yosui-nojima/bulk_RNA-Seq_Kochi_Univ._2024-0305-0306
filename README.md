@@ -94,7 +94,20 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 
 <img width="489" alt="スクリーンショット 2024-02-28 12 47 35" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/84e3566c-af91-48d9-9ad7-f89e62a110a7">
 
-21. インストールが完了。
+21. インストール完了。
+
+#### - NCBI SRA Toolkitのインストール
+1. [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip)にアクセスし、```sratoolkit.3.0.10-win64.zip```をダウンロードします。
+2. ```ダウンロード```ディレクトリに保存された```sratoolkit.3.0.10-win64.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+3. 下記コマンドを実行
+```
+cd
+unzip ~/sratoolkit.3.0.10-win64.zip
+```
+今回使用するsratoolkitのプログラムは、```prefetch```とfastq-dump```の２つです。\
+解凍後、それぞれ```$ ~/sratoolkit.3.0.10-win64/bin/prefetch -V```と``` ~/sratoolkit.3.0.10-win64/bin/fastq-dump -V```を実行し以下のメッセージが表示されれば、NCBI SRA Toolkitのインストールは完了です。
+
+
 
 #### - javaのインストール
 1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
@@ -139,10 +152,9 @@ make
 cd
 tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 ```
-コンパイル後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。\
+解凍後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。
 
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
-
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
