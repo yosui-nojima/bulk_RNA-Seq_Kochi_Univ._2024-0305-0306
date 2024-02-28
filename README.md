@@ -97,27 +97,18 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 21. インストールが完了し、Cygwinを起動すると以下の画面が確認できる。
 
 #### - javaのインストールとPATH設定
-1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
-2. javaは、```C:\Program Files\Java\jre1.8\bin```に格納されている場合と、```C:\Program Files (x86)\Java\jre1.8\bin```に格納されている場合があるため、各自の端末で確認して下さい。また、インストールした（されている）javaのバージョンによっては、```jre1.8```も異なる場合があります。適宜書き換えて
-3. Cygwinを起動し、下記コマンドを実行。
-```emacs .bash_profile```
-```.bash_profile```の最後に下記を書き加える。インストールした（されている）javaのバージョンによっては、```jre1.8```も異なる場合があります。適宜書き換えて下さい。
-- javaが```C:\Program Files\Java\jre1.8.0\bin```に格納されている場合
+Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
+
+#### - HISAT2のインストールとコンパイル
+1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
+2. 下記コマンドを実行
 ```
-PATH=$PATH:"/cygdrive/C/Program Files/Java/jre1.8/bin"
-export PATH
+cd ~/hisat2-2.2.1
+make
 ```
-- javaが```C:\Program Files (x86)\Java\jre1.8\bin```に格納されている場合
-```
-PATH=$PATH:"/cygdrive/C/Program Files/Java/jre1.8/bin"
-export PATH
-```
-4. 書き加えた後、\
-```x```+```s```\
-```x```+```c```\
-の順でキーを押し、設定を保存する。
-5. Cygwinを終了し、再度起動する。
-6. ```java -version```とコマンドを実行し、下記のメッセージが表示されればjavaのPATHが通っています。
+```make```でのコンパイルには30分ほどかかります。\
+コンパイル後、```hisat2 -h```を実行し以下のメッセージが表示されれば、HISAT2のインストール・コンパイルが完了です。
+
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
