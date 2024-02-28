@@ -106,7 +106,7 @@ mkdir bulksem
 
 #### - NCBI SRA Toolkitのインストール
 1. [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip)にアクセスし、```sratoolkit.3.0.10-win64.zip```をダウンロードします。
-2. ```ダウンロード```ディレクトリに保存された```sratoolkit.3.0.10-win64.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+2. ```ダウンロード```ディレクトリに保存された```sratoolkit.3.0.10-win64.zip```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
 cd
@@ -142,7 +142,7 @@ unzip ~/sratoolkit.3.0.10-win64.zip
 
 #### - HISAT2のインストールとコンパイル
 1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
-2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
 cd
@@ -158,7 +158,7 @@ make
 
 #### - featureCountsのインストール
 1. [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download)にアクセスし、```subread-2.0.6-Windows-x86_64.tar.gz```をダウンロードします。
-2. ```ダウンロード```ディレクトリに保存された```subread-2.0.6-Windows-x86_64.tar.gz```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+2. ```ダウンロード```ディレクトリに保存された```subread-2.0.6-Windows-x86_64.tar.gz```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
 cd
