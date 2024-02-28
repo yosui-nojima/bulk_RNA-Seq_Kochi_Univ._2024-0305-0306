@@ -139,6 +139,8 @@ tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 ```
 コンパイル後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。\
 
+<img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
+
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
