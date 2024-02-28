@@ -12,7 +12,7 @@
 公共データベースに格納されているbulk RNA-Seqデータを取得し、発現変動遺伝子（Differentially expressed genes; DEGs）の検出、DEGsを用いた各種エンリッチメント解析を行う。
 
 ## 用意するもの
-インターネット接続可能なコンピュータ１台（OS: Windows 10, Windows 11, or macOS）
+インターネット接続可能なコンピュータ１台（OS: Windows 11, or macOS）
 
 ## スケジュール
 #### １日目
@@ -27,7 +27,7 @@
 
 ## bulk RNA-Seq解析ハンズオントレーニング
 ## 環境構築
-### Windows 10 or Windows 11
+### Windows 11
 
 WindowsでUnix環境を構築するため、Cygwinを使用します。
 #### - Cygwinのインストール
