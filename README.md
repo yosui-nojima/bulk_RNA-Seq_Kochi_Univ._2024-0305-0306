@@ -27,7 +27,7 @@
 
 ## bulk RNA-Seq解析ハンズオントレーニング
 ## 環境構築
-### Windows 11
+## Windows 11
 Windows 11でUnix環境を構築するため、Cygwinを使用します。
 #### - Cygwinのインストール
 1. [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html)にアクセス
@@ -168,7 +168,7 @@ tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
 
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
 
-### macOS
+## macOS
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
 また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
 
