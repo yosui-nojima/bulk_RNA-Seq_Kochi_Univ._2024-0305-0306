@@ -1,4 +1,6 @@
-# がん研究会PBL　解析　〜Transcriptome解析〜
+# 高知大学　R５年度　DS/DXセミナー　〜bulk RNA-Seq解析ハンズオンセミナー〜
+
+
 ## インストール
 - Unix\
 SRA Toolkit、Trimmomatic、HISAT2、featureCountsはbinary fileをダウンロードして下さい。コンパイルなしでパスを指定するだけで実行できます。\
