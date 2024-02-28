@@ -12,7 +12,7 @@
 公共データベースに格納されているbulk RNA-Seqデータを取得し、発現変動遺伝子（Differentially expressed genes; DEGs）の検出、DEGsを用いた各種エンリッチメント解析を行う。
 
 ## 用意するもの
-コンピュータ１台（OS: Windows 10, Windows 11, or macOS）
+インターネット接続可能なコンピュータ１台（OS: Windows 10, Windows 11, or macOS）
 
 ## スケジュール
 #### １日目
@@ -113,8 +113,8 @@ PATH=$PATH:"/cygdrive/C/Program Files/Java/jre1.8/bin"
 export PATH
 ```
 4. 書き加えた後、\
-```x```+```s```
-```x```+```c```
+```x```+```s```\
+```x```+```c```\
 の順でキーを押し、設定を保存する。
 5. Cygwinを終了し、再度起動する。
 6. ```java -version```とコマンドを実行し、下記のメッセージが表示されればjavaのPATHが通っています。
