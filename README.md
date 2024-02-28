@@ -115,11 +115,9 @@ unzip ~/sratoolkit.3.0.10-win64.zip
 今回使用するsratoolkitのプログラムは、```prefetch```と```fastq-dump```の２つです。\
 解凍後、それぞれ```~/sratoolkit.3.0.10-win64/bin/prefetch -V```と``` ~/sratoolkit.3.0.10-win64/bin/fastq-dump -V```を実行し以下のメッセージが表示されれば、NCBI SRA Toolkitのインストールは完了です。
 
-<img width="516" alt="スクリーンショット 2024-02-28 16 49 34" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/802d0f15-5433-4ffa-ac3c-da00026e623e">
+<img width="516" alt="スクリーンショット 2024-02-28 16 49 34" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/82c3de4e-6cfd-4a1c-ba2a-022fea9acffe">
 
-
-<img width="535" alt="スクリーンショット 2024-02-28 16 49 49" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/b0da1aeb-85f3-4241-9d18-af21bb9847cf">
-
+<img width="535" alt="スクリーンショット 2024-02-28 16 49 49" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/4c9ff30d-5c1d-4c14-9539-6676a0c5a86f">
 
 #### - javaのインストール
 1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
