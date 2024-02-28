@@ -104,9 +104,13 @@ WindowsでUnix環境を構築するため、Cygwinを使用します。
 cd
 unzip ~/sratoolkit.3.0.10-win64.zip
 ```
-今回使用するsratoolkitのプログラムは、```prefetch```とfastq-dump```の２つです。\
-解凍後、それぞれ```$ ~/sratoolkit.3.0.10-win64/bin/prefetch -V```と``` ~/sratoolkit.3.0.10-win64/bin/fastq-dump -V```を実行し以下のメッセージが表示されれば、NCBI SRA Toolkitのインストールは完了です。
+今回使用するsratoolkitのプログラムは、```prefetch```と```fastq-dump```の２つです。\
+解凍後、それぞれ```~/sratoolkit.3.0.10-win64/bin/prefetch -V```と``` ~/sratoolkit.3.0.10-win64/bin/fastq-dump -V```を実行し以下のメッセージが表示されれば、NCBI SRA Toolkitのインストールは完了です。
 
+<img width="516" alt="スクリーンショット 2024-02-28 16 49 34" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/802d0f15-5433-4ffa-ac3c-da00026e623e">
+
+
+<img width="535" alt="スクリーンショット 2024-02-28 16 49 49" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/b0da1aeb-85f3-4241-9d18-af21bb9847cf">
 
 
 #### - javaのインストール
