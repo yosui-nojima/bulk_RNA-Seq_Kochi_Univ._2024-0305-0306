@@ -125,10 +125,19 @@ cd ~/hisat2-2.2.1
 make
 ```
 ```make```でのコンパイルには30分ほどかかります。\
-コンパイル後、```hisat2 -h```を実行し以下のメッセージが表示されれば、HISAT2のインストール・コンパイルが完了です。\
+コンパイル後、```hisat2 -h```を実行し以下のメッセージが表示されれば、HISAT2のインストール・コンパイルは完了です。\
 （最初の数行のみ表示させています。）
 
 <img width="642" alt="スクリーンショット 2024-02-28 16 16 23" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/5324d95d-74e2-41f5-97d3-8183613eaa60">
+
+#### - featureCountsのインストール
+1. [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download)にアクセスし、```subread-2.0.6-Windows-x86_64.tar.gz```をダウンロードします。
+2. ```ダウンロード```ディレクトリに保存された```subread-2.0.6-Windows-x86_64.tar.gz```を、Cygwinのホームディレクトリである```C:\cygwin64\home\xxx```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
+3. 下記コマンドを実行
+```
+tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
+```
+コンパイル後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。\
 
 
 ## 使用データ
