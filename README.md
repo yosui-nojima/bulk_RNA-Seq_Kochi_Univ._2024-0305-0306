@@ -210,10 +210,12 @@ cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
 ```
 4. 実行後、以下のポップアップが表示された場合は、「キャンセル」をクリック
 
+<img width="372" alt="スクリーンショット 2024-02-29 19 52 13" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/7498cf2c-00db-43ba-9ad0-d205107aeec7">
+
 
 5. Finder > アプリケーション > システム環境設定 > セキュリティとプライバシーをクリックし、以下の画面が表示されているので、「このまま許可」をクリック
 
-
+<img width="541" alt="スクリーンショット 2024-02-29 19 52 31" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/1efc80da-67dd-4bc3-98f8-0db3dcef717f">
 
 6. 再度下記コマンドを実行
 ```
@@ -222,15 +224,15 @@ cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
 
 7. 以下の画面が表示されているので、「開く」をクリック
 
-
+<img width="372" alt="スクリーンショット 2024-02-29 19 52 36" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/25866f3d-4f22-4878-bf37-7c21bfc5e1a4">
 
 8. 以下の画面が表示されるので、「キャンセル」をクリック
 
-
+<img width="372" alt="スクリーンショット 2024-02-29 19 52 40" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/83d996e8-2618-4d8d-a755-999b0d33328f">
 
 9. 「システム環境設定」→「セキュリティとプライバシー」をクリックし、以下の画面が表示されているので、「このまま許可」をクリック
 
-
+<img width="555" alt="スクリーンショット 2024-02-29 19 52 53" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/43bcccc3-acbc-4b09-9f60-d58b653fb780">
 
 10. 再度下記コマンドを実行
 ```
@@ -238,7 +240,7 @@ cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
 ```
 11. 以下の画面が表示されているので、「開く」をクリック
 
-
+<img width="372" alt="スクリーンショット 2024-02-29 19 52 58" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/1f927404-0673-42c2-ad9c-b2e15ff88245">
 
 12. 以下のメッセージが表示されれば、```prefetch```コマンドが実行可能になります。
 
