@@ -247,18 +247,38 @@ cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
 <img width="187" alt="スクリーンショット 2024-02-29 21 19 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/48b0c0ea-de8c-4ffc-9f9e-5845ee2556f0">
 
 #### - HISAT2のインストール
-1. [https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)にアクセスし、```sratoolkit.3.0.10-mac-x86_64.tar.gz```をダウンロードします。
+1. [https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)にアクセスし、```hisat2-2.2.1-OSX_x86_64.zip```をダウンロードします。
 2. ```Downloads```ディレクトリにダウンロードされているため、下記コマンドを実行して作業ディレクトリに移動し、解凍します。
 ```
-mv ~/Downloads/sratoolkit.3.0.10-mac-x86_64.tar.gz ~/bulksem
+mv ~/Downloads/hisat2-2.2.1-OSX_x86_64.zip ~/bulksem
 cd ~/bulksem
-tar -zxvf ./sratoolkit.3.0.10-mac-x86_64.tar.gz
+unzip ./hisat2-2.2.1-OSX_x86_64.zip
 ```
 3. 下記コマンドを実行
 ```
-cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
-./prefetch -V
+cd ~/bulksem/hisat2-2.2.1
+./hisat2 --version
 ```
+4. NCBI SRA Toolkitの```prefetch```と同じ要領で```hisat2```に実行許可を与えます。
+5. 再度下記コマンドを実行
+```
+./hisat2 --version
+```
+6. 以下のメッセージが表示されれば、```hisat2```コマンドが実行可能になります。
+
+
+
+7.下記コマンドを実行
+```
+./hisat2-build --version
+```
+8. 同じ要領で実行許可を与えます。
+9. 再度下記コマンドを実行
+```
+./hisat2-build --version
+```
+10. 以下のメッセージが表示されれば、```hisat2-build```コマンドが実行可能になります。
+
 
 #### - featureCountsのインストール
 [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)
