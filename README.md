@@ -117,7 +117,7 @@ unzip ./sratoolkit.3.0.10-win64.zip
 ./sratoolkit.3.0.10-win64/bin/prefetch -V
 ```
 ```
-~/sratoolkit.3.0.10-win64/bin/fastq-dump -V
+./sratoolkit.3.0.10-win64/bin/fastq-dump -V
 ```
 以下のメッセージがそれぞれ表示されれば、NCBI SRA Toolkitのインストールは完了です。
 
@@ -272,6 +272,16 @@ cd ./sratoolkit.3.0.10-mac-x86_64/bin/
 
 <img width="187" alt="スクリーンショット 2024-02-29 21 19 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/48b0c0ea-de8c-4ffc-9f9e-5845ee2556f0">
 
+#### - Trimmomaticのインストール
+1. 下記コマンドを実行
+```
+cd ~/bulksem
+wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+unzip Trimmomatic-0.39.zip
+java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
+```
+2. ```0.39```のメッセージが表示されれば、Trimmomaticのインストール完了
+
 #### - HISAT2のインストール
 1. [https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)にアクセスし、```hisat2-2.2.1-OSX_x86_64.zip```をダウンロードします。
 2. ```Downloads```ディレクトリにダウンロードされているため、下記コマンドを実行して作業ディレクトリに移動し、解凍します。
@@ -295,7 +305,7 @@ cd ./hisat2-2.2.1
 
 <img width="1035" alt="スクリーンショット 2024-02-29 21 31 40" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/2245efdd-561e-459e-9976-4c293a5a2a7b">
 
-7.下記コマンドを実行
+7. 下記コマンドを実行
 ```
 ./hisat2-build --version
 ```
@@ -309,7 +319,25 @@ cd ./hisat2-2.2.1
 <img width="873" alt="スクリーンショット 2024-02-29 21 28 27" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/107c5277-d9f3-4d38-bf19-0daae2379424">
 
 #### - featureCountsのインストール
-[https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)
+1. [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)にアクセスし、```subread-2.0.6-macOS-x86_64.tar.gz```をダウンロードします。
+2. ```Downloads```ディレクトリにダウンロードされているため、下記コマンドを実行して作業ディレクトリに移動し、解凍します。
+```
+mv ~/Downloads/subread-2.0.6-macOS-x86_64.tar.gz ~/bulksem
+cd ~/bulksem
+tar -zxvf  ./subread-2.0.6-macOS-x86_64.tar.gz
+```
+3. 下記コマンドを実行
+```
+cd ~/bulksem
+cd ./subread-2.0.6-macOS-x86_64/bin
+./featureCounts -v
+```
+4. NCBI SRA Toolkitの```prefetch```と同じ要領で```featureCounts```に実行許可を与えます。
+5. 再度下記コマンドを実行
+```
+./featureCounts -v
+```
+6. ```featureCounts v2.0.6```のメッセージが表示されれば、```hisat2```コマンドが実行可能になります。
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
