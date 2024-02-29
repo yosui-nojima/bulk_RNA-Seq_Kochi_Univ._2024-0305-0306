@@ -154,6 +154,8 @@ java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
 ```
 2. 以下のメッセージが表示されれば、Trimmomaticのインストール完了
 
+<img width="424" alt="スクリーンショット 2024-02-29 21 45 04" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/7e115832-705f-45d2-b392-2d76825b3145">
+
 #### - HISAT2のインストールとコンパイル
 1. [https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download](https://cloud.biohpc.swmed.edu/index.php/s/fE9QCsX3NH4QwBi/download)にアクセスして、```hisat2-2.2.1-source.zip```をダウンロードします。
 2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
@@ -189,10 +191,14 @@ make
 2. ```ダウンロード```ディレクトリに保存された```subread-2.0.6-Windows-x86_64.tar.gz```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
-cd
-tar -zxvf ~/subread-2.0.6-Windows-x86_64.tar.gz
+cd ~/bulksem
+tar -zxvf ./subread-2.0.6-Windows-x86_64.tar.gz
 ```
-解凍後、```~/subread-2.0.6-Windows-x86_64/bin/featureCounts -v```を実行し以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。
+解凍後、下記コマンドを実行
+```
+./subread-2.0.6-Windows-x86_64/bin/featureCounts -v
+```
+以下のメッセージが表示されれば、featureCountsのインストール・コンパイルは完了です。
 
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
 
@@ -224,7 +230,8 @@ tar -zxvf ./sratoolkit.3.0.10-mac-x86_64.tar.gz
 ```
 3. 下記コマンドを実行
 ```
-cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
+cd ~/bulksem
+cd ./sratoolkit.3.0.10-mac-x86_64/bin/
 ./prefetch -V
 ```
 4. 実行後、以下のポップアップが表示された場合は、「キャンセル」をクリック
@@ -275,7 +282,8 @@ unzip ./hisat2-2.2.1-OSX_x86_64.zip
 ```
 3. 下記コマンドを実行
 ```
-cd ~/bulksem/hisat2-2.2.1
+cd ~/bulksem
+cd ./hisat2-2.2.1
 ./hisat2 --version
 ```
 4. NCBI SRA Toolkitの```prefetch```と同じ要領で```hisat2```に実行許可を与えます。
