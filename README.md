@@ -244,12 +244,22 @@ cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
 
 12. 以下のメッセージが表示されれば、```prefetch```コマンドが実行可能になります。
 
-
-
-[https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz)
+<img width="187" alt="スクリーンショット 2024-02-29 21 19 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/48b0c0ea-de8c-4ffc-9f9e-5845ee2556f0">
 
 #### - HISAT2のインストール
-[https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)
+1. [https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download](https://cloud.biohpc.swmed.edu/index.php/s/zMgEtnF6LjnjFrr/download)にアクセスし、```sratoolkit.3.0.10-mac-x86_64.tar.gz```をダウンロードします。
+2. ```Downloads```ディレクトリにダウンロードされているため、下記コマンドを実行して作業ディレクトリに移動し、解凍します。
+```
+mv ~/Downloads/sratoolkit.3.0.10-mac-x86_64.tar.gz ~/bulksem
+cd ~/bulksem
+tar -zxvf ./sratoolkit.3.0.10-mac-x86_64.tar.gz
+```
+3. 下記コマンドを実行
+```
+cd ~/bulksem/sratoolkit.3.0.10-mac-x86_64/bin/
+./prefetch -V
+```
+
 #### - featureCountsのインストール
 [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)
 
