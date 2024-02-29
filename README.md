@@ -155,15 +155,25 @@ unzip ~/hisat2-2.2.1-source.zip
 cd ~/hisat2-2.2.1
 make
 ```
-```make```でのコンパイルには30分ほどかかります。\
-コンパイル後、下記コマンドを実行します。
+```make```でのコンパイルには30分ほどかかります。
+
+4. コンパイル後、下記コマンドを実行します。
 ```
 ./hisat2 -h
 ```
-以下のメッセージが表示されれば、HISAT2のインストール・コンパイルは完了です。\
+以下のメッセージが表示されれば、```hisat2```のインストール・コンパイルは完了です。\
 （最初の数行のみ表示させています。）
 
 <img width="642" alt="スクリーンショット 2024-02-28 16 16 23" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/5324d95d-74e2-41f5-97d3-8183613eaa60">
+
+4. コンパイル後、下記コマンドを実行します。
+```
+./hisat2-build -h
+```
+以下のメッセージが表示されれば、```hisat2-build```のインストール・コンパイルは完了です。\
+（最初の数行のみ表示させています。）
+
+<img width="676" alt="スクリーンショット 2024-02-29 21 32 28" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/e65c3579-5ace-4276-9b72-b2c915e7e62c">
 
 #### - featureCountsのインストール
 1. [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-Windows-x86_64.tar.gz/download)にアクセスし、```subread-2.0.6-Windows-x86_64.tar.gz```をダウンロードします。
@@ -266,7 +276,7 @@ cd ~/bulksem/hisat2-2.2.1
 ```
 6. 以下のメッセージが表示されれば、```hisat2```コマンドが実行可能になります。
 
-
+<img width="1035" alt="スクリーンショット 2024-02-29 21 31 40" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/2245efdd-561e-459e-9976-4c293a5a2a7b">
 
 7.下記コマンドを実行
 ```
@@ -279,6 +289,7 @@ cd ~/bulksem/hisat2-2.2.1
 ```
 10. 以下のメッセージが表示されれば、```hisat2-build```コマンドが実行可能になります。
 
+<img width="873" alt="スクリーンショット 2024-02-29 21 28 27" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/107c5277-d9f3-4d38-bf19-0daae2379424">
 
 #### - featureCountsのインストール
 [https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download](https://sourceforge.net/projects/subread/files/subread-2.0.6/subread-2.0.6-macOS-x86_64.tar.gz/download)
