@@ -25,9 +25,9 @@
 ## 統計基礎講義資料
 下記よりダウンロード下さい。
 
-## bulk RNA-Seq解析ハンズオントレーニング
+# bulk RNA-Seq解析ハンズオントレーニング
 ## 環境構築
-## Windows 11
+### Windows 11
 Windows 11でUnix環境を構築するため、Cygwinを使用します。
 #### - Cygwinのインストール
 1. [https://www.cygwin.com/install.html](https://www.cygwin.com/install.html)にアクセス
