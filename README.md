@@ -113,7 +113,14 @@ cd
 unzip ~/sratoolkit.3.0.10-win64.zip
 ```
 今回使用するsratoolkitのプログラムは、```prefetch```と```fastq-dump```の２つです。\
-解凍後、それぞれ```~/sratoolkit.3.0.10-win64/bin/prefetch -V```と``` ~/sratoolkit.3.0.10-win64/bin/fastq-dump -V```を実行し以下のメッセージが表示されれば、NCBI SRA Toolkitのインストールは完了です。
+解凍後、下記コマンドを実行します。
+```
+~/sratoolkit.3.0.10-win64/bin/prefetch -V
+```
+```
+~/sratoolkit.3.0.10-win64/bin/fastq-dump -V
+```
+以下のメッセージがそれぞれ表示されれば、NCBI SRA Toolkitのインストールは完了です。
 
 <img width="516" alt="スクリーンショット 2024-02-28 16 49 34" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/82c3de4e-6cfd-4a1c-ba2a-022fea9acffe">
 
@@ -149,7 +156,11 @@ cd ~/hisat2-2.2.1
 make
 ```
 ```make```でのコンパイルには30分ほどかかります。\
-コンパイル後、```hisat2 -h```を実行し以下のメッセージが表示されれば、HISAT2のインストール・コンパイルは完了です。\
+コンパイル後、下記コマンドを実行します。
+```
+hisat2 -h
+```
+以下のメッセージが表示されれば、HISAT2のインストール・コンパイルは完了です。\
 （最初の数行のみ表示させています。）
 
 <img width="642" alt="スクリーンショット 2024-02-28 16 16 23" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/5324d95d-74e2-41f5-97d3-8183613eaa60">
@@ -179,7 +190,16 @@ mkdir bulksem
 
 #### - NCBI SRA Toolkitのインストール
 1. [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-x86_64.tar.gz](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-x86_64.tar.gz)にアクセスし、```sratoolkit.3.0.10-mac-x86_64.tar.gz```をダウンロードします。
-
+2. ```Downloads```ディレクトリにダウンロードされているため、下記コマンドを実行して作業ディレクトリに移動し、解凍します。
+```
+mv ~/Downloads/sratoolkit.3.0.10-mac-x86_64.tar.gz ~/bulksem
+tar -zxvf ~/bulksem/sratoolkit.3.0.10-mac-x86_64.tar.gz
+```
+3. 下記コマンドを実行
+```
+~/bulksem/prefetch -V
+```
+4. 実行後、以下のポップアップが表示された場合は
 [https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz](https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-mac-arm64.tar.gz)
 
 #### - HISAT2のインストール
