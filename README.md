@@ -108,7 +108,7 @@ mkdir bulksem
 1. 下記のコマンドを実行
 ```
 cd ~/bulksem
-wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip
+curl -OL https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.10/sratoolkit.3.0.10-win64.zip
 unzip ./sratoolkit.3.0.10-win64.zip
 ```
 2. 今回使用するsratoolkitのプログラムは、```prefetch```と```fastq-dump```の２つです。\
@@ -129,7 +129,7 @@ unzip ./sratoolkit.3.0.10-win64.zip
 1. 下記コマンドを実行
 ```
 cd ~/bulksem
-wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
+curl -OL https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
 unzip fastqc_v0.12.1.zip
 cd ./FastQC
 ./fastqc -v
@@ -159,7 +159,7 @@ cd ./FastQC
 1. 下記コマンドを実行
 ```
 cd ~/bulksem
-wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+curl -OL http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
 unzip Trimmomatic-0.39.zip
 java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
 ```
@@ -296,7 +296,7 @@ cd ./sratoolkit.3.0.10-mac-x86_64/bin/
 1. 下記コマンドを実行
 ```
 cd ~/bulksem
-wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
+curl -OL https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
 unzip fastqc_v0.12.1.zip
 cd ./FastQC
 ./fastqc -v
@@ -306,7 +306,7 @@ cd ./FastQC
 1. 下記コマンドを実行
 ```
 cd ~/bulksem
-wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+curl -OL http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
 unzip Trimmomatic-0.39.zip
 java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
 ```
@@ -384,10 +384,10 @@ export PATH=/Users/xxx/bulksem/sratoolkit.3.0.10-mac-x86_64/bin:/Users/xxx/bulks
 下記のコマンドを実行
 ```
 cd ~/bulksem
-wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_1_100K.fastq.gz
-wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_2_100K.fastq.gz
-wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_1_100K.fastq.gz
-wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_2_100K.fastq.gz
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_1_100K.fastq.gz
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample1_2_100K.fastq.gz
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_1_100K.fastq.gz
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_2_100K.fastq.gz
 ```
 
 ## 3. 公共データベースの紹介
