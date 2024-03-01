@@ -125,6 +125,17 @@ unzip ./sratoolkit.3.0.10-win64.zip
 
 <img width="535" alt="スクリーンショット 2024-02-28 16 49 49" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/4c9ff30d-5c1d-4c14-9539-6676a0c5a86f">
 
+#### - FastQCのインストール
+1. 下記コマンドを実行
+```
+cd ~/bulksem
+wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
+unzip fastqc_v0.12.1.zip
+cd ./FastQC
+./fastqc -v
+```
+2. ```FastQC v0.12.1```のメッセージが表示されれば、FastQCのインストールのインストール完了
+
 #### - javaのインストール
 1. Windowsにjavaがインストールされていない場合は、[https://www.java.com/ja/download/](https://www.java.com/ja/download/)にアクセスし、```jre-8u401-windows-x64.exe```をダウンロードする（2024年2月28日時点）。
 2. ダウンロードディレクトリに保存された「jre-8u401-windows-x64.exe」をダブルクリック
@@ -202,6 +213,12 @@ tar -zxvf ./subread-2.0.6-Windows-x86_64.tar.gz
 
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
 
+#### - PATHの追加
+絶対PATHの入力を不要にするため、コマンドごとにPATHを追加しておきます。
+下記のコマンドを実行します。
+```
+
+
 ## macOS
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
 また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
@@ -271,6 +288,16 @@ cd ./sratoolkit.3.0.10-mac-x86_64/bin/
 
 <img width="187" alt="スクリーンショット 2024-02-29 21 19 18" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/48b0c0ea-de8c-4ffc-9f9e-5845ee2556f0">
 
+#### - FastQCのインストール
+1. 下記コマンドを実行
+```
+cd ~/bulksem
+wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip
+unzip fastqc_v0.12.1.zip
+cd ./FastQC
+./fastqc -v
+```
+2. ```FastQC v0.12.1```のメッセージが表示されれば、FastQCのインストールのインストール完了
 #### - Trimmomaticのインストール
 1. 下記コマンドを実行
 ```
@@ -350,20 +377,20 @@ wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_1_1
 wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_2_100K.fastq.gz
 ```
 
-## 1-1 公共データベースの紹介
+## 公共データベースの紹介
 ![20190605_metacore](https://user-images.githubusercontent.com/85273234/144177090-bbba1e07-08de-4acf-bf6f-b7395a1e104d.jpg)
-### NCBI SRA (https://www.ncbi.nlm.nih.gov/sra)
+#### NCBI SRA (https://www.ncbi.nlm.nih.gov/sra)
 <img width="1190" alt="スクリーンショット 2021-12-01 14 22 50" src="https://user-images.githubusercontent.com/85273234/144176897-1c463d7f-ca18-41cf-979e-b70fb2db9f0e.png">
 
-### DDBJ Sequence Read Archive (https://www.ddbj.nig.ac.jp/dra/index.html)
+####  DDBJ Sequence Read Archive (https://www.ddbj.nig.ac.jp/dra/index.html)
 <img width="1792" alt="スクリーンショット 2021-12-01 14 23 16" src="https://user-images.githubusercontent.com/85273234/144177226-15d63718-b705-4f71-b103-dc84aa997a14.png">
 
-### EBI ENA (https://www.ebi.ac.uk/ena/browser/home)
+####  EBI ENA (https://www.ebi.ac.uk/ena/browser/home)
 <img width="1167" alt="スクリーンショット 2021-12-01 14 23 58" src="https://user-images.githubusercontent.com/85273234/144177440-38a84e15-0555-4ae3-9984-08590f751b7f.png">
 
-### ※データ検索は、スクリーン上で実演します。
+####  ※データ検索は、スクリーン上で実演します。
 
-## 1-2 データ取得方法
+## データ取得方法
 １．解析したデータセットのAccession numberをNCBI SRA Run Selectorに入力し、『Search』をクリック。
 <img width="1792" alt="スクリーンショット 2021-12-01 15 13 56" src="https://user-images.githubusercontent.com/85273234/144181792-1ac601bf-88d8-472e-a30f-d554e3b7d5a1.png">
 ２．データセット内の全てのデータを解析する場合は、Total行の『Accession List』をクリックし、サンプルごとのAccession numberが記載されたテキストファイル（SRR_Acc_List.txt）をダウンロードする。一部のデータのみ解析する場合は、必要なデータに☑をいれSelected行の『Accession List』をクリックし、SRR_Acc_List.txtをダウンロードする。
