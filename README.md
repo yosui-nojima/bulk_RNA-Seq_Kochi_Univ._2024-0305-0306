@@ -583,34 +583,45 @@ Duplidate readsの含まれている数を示しています。
 または、下記のコマンドを実行することでもダウンロード・解凍が可能です。
 ```
 cd ~/bulksem
-curl -OL https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-curl -OL https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
+curl -OL https://ftp.ensembl.org/pub/release-101/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+curl -OL https://ftp.ensembl.org/pub/release-101/gtf/homo_sapiens/Homo_sapiens.GRCh38.101.gtf.gz
 gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-gunzip Homo_sapiens.GRCh38.111.gtf.gz
+gunzip Homo_sapiens.GRCh38.101.gtf.gz
 ```
+2024年3月1日現在の最新版は```release-111```になります。
 
 ## 5 リファレンスゲノムへのマッピング
 ### 5-1 リファレンスゲノムファイルのインデックス化
+**下記コマンドはかなり時間がかかるため、本セミナーでは実行しません。今後自身でインデックス化する際の参考にして下さい。**
 4でダウンロードしたリファレンスゲノムファイルをインデックス化します。一般的にゲノムデータのサイズは大きくなりがちでありそのままでは処理時間がかかってしまうため、インデックス（目次）ファイルを作成して高速にアクセスできるようにします。\
 インデックス化に必要なプログラムは、多くの場合マッピングツールに含まれています。\
 今回は、HISAT2に含まれる```hisat2-build```を使用します。\
 インデックス化する前段階として、まずは下記を実行します。それぞれスプライシングサイト、エキソンサイトを抽出するpythonスクリプトです。
 ```
-~/hisat2-2.2.1/extract_splice_sites.py ./Homo_sapiens.GRCh38.101.gtf > ./Homo_sapiens.GRCh38.101.ss
-~/hisat2-2.2.1/extract_exons.py ./Homo_sapiens.GRCh38.101.gtf > ./Homo_sapiens.GRCh38.101.exon 
+cd ~/bulksem
+./hisat2-2.2.1/extract_splice_sites.py ./Homo_sapiens.GRCh38.101.gtf > ./Homo_sapiens.GRCh38.101.ss
+./hisat2-2.2.1/extract_exons.py ./Homo_sapiens.GRCh38.101.gtf > ./Homo_sapiens.GRCh38.101.exon 
 ```
 上記の２ファイルも使って、インデックス化します。
 ```
-~/hisat2-2.2.1/hisat2-build -p 18 --ss ./Homo_sapiens.GRCh38.101.ss --exon ./Homo_sapiens.GRCh38.101.exon ./Homo_sapiens.GRCh38.dna.primary_assembly.fa ./GRCh38.101
+hisat2-build -p 4 --ss ./Homo_sapiens.GRCh38.101.ss --exon ./Homo_sapiens.GRCh38.101.exon ./Homo_sapiens.GRCh38.dna.primary_assembly.fa ./GRCh38.101
 ```
 - -p：スレッド数（使用するPC環境に合わせて設定して下さい。）
 - -ss：extract_splice_sites.pyで作成したファイルを指定
 - -exon：extract_exons.pyで作成したファイルを指定
 
-### 5-2 マッピング
-いよいよマッピングを行います。今回は時間短縮のため、１０万リードランダムサンプリングしたFASTQファイル（最初にダウンロードしたファイル）を5-1で作成したインデックス化したリファレンスゲノムにマッピングします。
+**本セミナーでは下記リンクからインデックス化済みリフェレンスゲノムファイルを取得して下さい。**
+[https://www.dropbox.com/scl/fi/0oydrvg3uxq12tk12loyq/GRCh38.101.tar.gz?rlkey=az0iixhsl803sf1q4zas88hwm&dl=0](https://www.dropbox.com/scl/fi/0oydrvg3uxq12tk12loyq/GRCh38.101.tar.gz?rlkey=az0iixhsl803sf1q4zas88hwm&dl=0)
+ダウンロード後、```GRCh38.101.tar.gz```をWindows11の場合は```C:\cygwin64\home\xxx\bulksem```に、macOSの場合は```~/bulksem```に移動して下さい(```xxx```は任意のユーザー名に変更すること。)\
+下記コマンドを実行
 ```
-~/hisat2-2.1.0/hisat2 -p 40 --dta -x ./GRCh38.101 -1 ./sample1_1_100K_trim_paired.fastq.gz -2 ../sample1_2_100K_trim_paired.fastq.gz -S sample1_hisat2.sam 2> sample1_hisat2_log.txt
+tar -zxvf GRCh38.101.tar.gz
+```
+
+### 5-2 マッピング
+ゲノムへのマッピングを行います。今回は時間短縮のため、１０万リードランダムサンプリングしたFASTQファイル（最初にダウンロードしたファイル）を5-1で作成したインデックス化したリファレンスゲノムにマッピングします。
+```
+hisat2 -p 4 --dta -x ./GRCh38.101 -1 ./sample1_1_100K_trim_paired.fastq.gz -2 ../sample1_2_100K_trim_paired.fastq.gz -S sample1_hisat2.sam 2> sample1_hisat2_log.txt
 ```
 - -p：スレッド数（使用するPC環境に合わせて設定して下さい。）
 - --dta：アセンブラーなど下流の解析ツールを使用する際のオプション。またメモリ使用量を改善する。
@@ -624,9 +635,9 @@ gunzip Homo_sapiens.GRCh38.111.gtf.gz
 
 ## 6 マッピングデータから遺伝子ごとにリードのカウントデータを取得する
 マッピング結果であるSAMファイルからgeneごとまたはtranscriptごとにリードのカウント数を出力します。\
-カウントデータの出力には[Subread package](http://subread.sourceforge.net/)に含まれる```featureCounts```というプログラムを使用します。
+```featureCounts```を使用します。
 ```
-~/subread-2.0.1-MacOS-x86_64/bin/featureCounts -O -M -T 18 -p -t exon -g gene_id -a ./Homo_sapiens.GRCh38.101.gtf -o sample_count.txt sample*_hisat2.sam
+featureCounts -O -M -T 18 -p -t exon -g gene_id -a ./Homo_sapiens.GRCh38.101.gtf -o sample_count.txt sample*_hisat2.sam
 ```
 - -O：複数のfeatureで定義されている特定のゲノム領域にマッピングされたリードもカウントする
 - -M：マルチマッピングされたリードもカウントする
@@ -643,7 +654,7 @@ cut -f1,7- sample_count.txt | grep -v ^\# > featureCounts_output.txt
 ```
 
 ## 7 カウントデータをTPM値に変換する
-ここからは作業をRStudioに移します。\
+ここからは作業RStudioに移します。\
 featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。６で出力したファイルはPBL用のスモールデータです。ある疾患の公共RNA-Seqデータ（３９サンプル）のカウント値を出力したファイル[```featureCounts_all_output.txt```](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt)を用意しましたので、こちらを読み込んで下さい。
 ```
 data <- read.table("~/PBL/featureCounts_all_output.txt", header = TRUE, row.names = 1, sep = "\t")
