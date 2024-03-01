@@ -436,19 +436,20 @@ CCCFFFFFHHHHHJJJJIJJJJIJIJJJJJJJJJJJJJJJJJFIIGIJJIJIJJIJJJJJHHHHHFFFFF\
 
 ### ２．FASTQファイルのクオリティーコントロール
 FastQCを使って、FASTQファイルの品質を確認します。\
-端末から行う場合、下記のコマンドを実行します。
+下記のコマンドを実行します。
 ```
-mkdir ~/fastqc_results
-~/FastQC/fastqc -t 40 -o ~/fastqc_results/ ~/sample1_1_100K.fastq.gz
+cd ~/bulksem
+mkdir fastqc_results
+fastqc -t 4 -o ./fastqc_results/ ./sample1_1_100K.fastq.gz
 ```
 - -t：スレッド数（使用するPC環境に合わせて設定して下さい。）
 - -o：出力ディレクトリ
 
-アプリケーション版を使用する場合は、File>Openでファイルを指定し実行して下さい。\
-複数ファイル指定することで、バッチ処理が可能です。
-<img width="912" alt="スクリーンショット 2021-12-02 17 19 34" src="https://user-images.githubusercontent.com/85273234/144384259-16f77dc6-b572-4e5e-b865-31aa4e7429d0.png">
+計算が終わると```Analysis complete for sample1_1_100K.fastq.gz```と表示れます。
+```fastqc_results```ディレクトリに、```sample1_1_100K_fastqc.html```というファイルが作成されています。\
+これを適当なWeb Browserで開いて下さい。
 
-### ３．FastQC解析結果
+### 3. FastQC解析結果
 各QC結果の説明は、下記のブログでよくまとめられています。\
 https://imamachi-n.hatenablog.com/entry/2017/03/27/234350
 
@@ -496,12 +497,13 @@ Duplidate readsの含まれている数を示しています。
 各塩基ごとに見たときのリード中に含まれているアダプターの割合を示しています。 あくまで、FastQCに登録されているアダプター配列しか確認していないので、登録されていないアダプター配列を使っていた場合、そのアダプター配列がリード中に混入していても確認できないことがあります。 
 <img width="898" alt="スクリーンショット 2021-12-03 13 15 53" src="https://user-images.githubusercontent.com/85273234/144544371-74ddb7ed-97d1-4ffa-b934-50ef78ebd7e5.png">
 
-## 5. アダプターの除去およびリードのトリミング
+## 4. アダプターの除去およびリードのトリミング
 Trimmomaticを使って、アダプターの除去および低スコアな塩基のトリミングを同時に行います。
 アダプター配列を記載したFATSAファイルは[ここ](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/Truseq_stranded_totalRNA_adapter.fa)からダウンロード可能です。（今回は、illumina社のTruSeqシリーズの配列を記載しています。自前データで実行する際は、ライブラリー作製キットで使用している配列が記載されたFASTAファイルを用意して実行して下さい。）\
 下記はpaired-endでシーケンスしたFASTQファイルの場合です。
 ```
 cd ~/bulksem
+
 java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 ./sample1_1_100K.fastq.gz ./sample1_2_100K.fastq.gz ./sample1_1_100K_trim_paired.fastq.gz ./sample1_1_100K_trim_unpaired.fastq.gz ./sample1_2_100K_trim_paired.fastq.gz ./sample1_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25
 ```
 - PE：レイアウトがpaired-endシーケンスのときに指定。single-endの場合はSEを指定します。
