@@ -26,7 +26,7 @@
 下記よりダウンロード下さい。
 
 # bulk RNA-Seq解析ハンズオントレーニング
-## 環境構築
+## 1. 環境構築
 ### Windows 11
 Windows 11でUnix環境を構築するため、Cygwinを使用します。
 #### - Cygwinのインストール
@@ -223,7 +223,7 @@ export PATH=/home/xxx/bulksem/sratoolkit.3.0.10-win64/bin:/home/xxx/bulksem/Fast
 ただし、Cygwinを終了するとリセットされるため、再度実行する必要があります。\
 （Cygwin終了の有無に関わらずPATHを追加することも可能ですが、今回は行いません。）
 
-## macOS
+### macOS
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
 また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
 
@@ -378,7 +378,7 @@ export PATH=/Users/xxx/bulksem/sratoolkit.3.0.10-mac-x86_64/bin:/Users/xxx/bulks
 ただし、ターミナルを終了するとリセットされるため、再度実行する必要があります。\
 （ターミナル終了の有無に関わらずPATHを追加することも可能ですが、今回は行いません。）
 
-## 使用データ
+## 2. 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
 今回のセミナー用に公共データから１サンプル１０万リードランダムサンプリングしたものです。\
 下記のコマンドを実行
@@ -390,7 +390,7 @@ wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_1_1
 wget https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/sample2_2_100K.fastq.gz
 ```
 
-## 公共データベースの紹介
+## 3. 公共データベースの紹介
 ![20190605_metacore](https://user-images.githubusercontent.com/85273234/144177090-bbba1e07-08de-4acf-bf6f-b7395a1e104d.jpg)
 #### NCBI SRA (https://www.ncbi.nlm.nih.gov/sra)
 <img width="1190" alt="スクリーンショット 2021-12-01 14 22 50" src="https://user-images.githubusercontent.com/85273234/144176897-1c463d7f-ca18-41cf-979e-b70fb2db9f0e.png">
@@ -422,7 +422,7 @@ find . -name '*.sra' -exec fastq-dump --gzip --split-files --outdir ./PATH {} \;
 - --gzip：圧縮ファイルとして出力する
 - --split-files：レイアウトがpaired-endの際に指定する。single-endのときは不要。
 
-## 2 FASTQファイルの形式、クオリティーコントロールについて
+## 4. FASTQファイルの形式、クオリティーコントロールについて
 ### １．FASTQファイルとは
 @SRR8615662.1 1 length=101\
 TGATGGCCCTGCCTTCGTGGGAACAGAGGCTAAGGCCTTGAG\
@@ -496,12 +496,13 @@ Duplidate readsの含まれている数を示しています。
 各塩基ごとに見たときのリード中に含まれているアダプターの割合を示しています。 あくまで、FastQCに登録されているアダプター配列しか確認していないので、登録されていないアダプター配列を使っていた場合、そのアダプター配列がリード中に混入していても確認できないことがあります。 
 <img width="898" alt="スクリーンショット 2021-12-03 13 15 53" src="https://user-images.githubusercontent.com/85273234/144544371-74ddb7ed-97d1-4ffa-b934-50ef78ebd7e5.png">
 
-## 3 アダプターの除去およびリードのトリミング
+## 5. アダプターの除去およびリードのトリミング
 Trimmomaticを使って、アダプターの除去および低スコアな塩基のトリミングを同時に行います。
 アダプター配列を記載したFATSAファイルは[ここ](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/Truseq_stranded_totalRNA_adapter.fa)からダウンロード可能です。（今回は、illumina社のTruSeqシリーズの配列を記載しています。自前データで実行する際は、ライブラリー作製キットで使用している配列が記載されたFASTAファイルを用意して実行して下さい。）\
 下記はpaired-endでシーケンスしたFASTQファイルの場合です。
 ```
-java -jar ~/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 ./sample1_1_100K.fastq.gz ./sample1_2_100K.fastq.gz ./sample1_1_100K_trim_paired.fastq.gz ./sample1_1_100K_trim_unpaired.fastq.gz ./sample1_2_100K_trim_paired.fastq.gz ./sample1_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25
+cd ~/bulksem
+java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 ./sample1_1_100K.fastq.gz ./sample1_2_100K.fastq.gz ./sample1_1_100K_trim_paired.fastq.gz ./sample1_1_100K_trim_unpaired.fastq.gz ./sample1_2_100K_trim_paired.fastq.gz ./sample1_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25
 ```
 - PE：レイアウトがpaired-endシーケンスのときに指定。single-endの場合はSEを指定します。
 - -threads：スレッド数（使用するPC環境に合わせて設定して下さい。）
@@ -515,7 +516,7 @@ java -jar ~/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 ./sampl
 サンプル数が多い場合一つ一つコマンドを打って処理するのは面倒です。その場合、下記のようにawkコマンドを使って複数サンプルのコマンドを１つのシェルファイルに記載してバッチ処理することができます。\
 変数部分が```%s```に該当します。```%s```の数だけ後部にカンマ区切りの```$1```を記載します。
 ```
-ls sample*_100K.fastq.gz | cut -f1 -d_ | sort | uniq | awk '{printf ("java -jar ~/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 %s_1_100K.fastq.gz %s_2_100K.fastq.gz %s_1_100K_trim_paired.fastq.gz %s_1_100K_trim_unpaired.fastq.gz %s_2_100K_trim_paired.fastq.gz %s_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25 2> %s_trim.txt \n", $1, $1, $1, $1, $1, $1, $1)}' > trim.sh
+ls sample*_100K.fastq.gz | cut -f1 -d_ | sort | uniq | awk '{printf ("java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 %s_1_100K.fastq.gz %s_2_100K.fastq.gz %s_1_100K_trim_paired.fastq.gz %s_1_100K_trim_unpaired.fastq.gz %s_2_100K_trim_paired.fastq.gz %s_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25 2> %s_trim.txt \n", $1, $1, $1, $1, $1, $1, $1)}' > trim.sh
 sh trim.sh
 ```
 
