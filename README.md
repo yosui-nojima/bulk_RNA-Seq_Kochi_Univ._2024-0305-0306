@@ -328,7 +328,9 @@ IDEとして、最も一般的なのが『**RStudio**』です。
 <img width="1186" alt="スクリーンショット 2023-05-12 18 10 25" src="https://github.com/yosui-nojima/statistics-C1_R/assets/85273234/c45549af-ddb6-42ac-93ab-083ce71c7434">
 
 #### - Rパッケージのインストール
-
+『Console』に直接入力して実行してもかまわないが、スクリプトとして記録・保存できないため、\
+タブから、File → New File → R Scriptを選択し、クリック。\
+下記コードを入力し、「Run」をクリック。
 ```
 install.packages("BiocManager")
 install.packages("ggplot2")
