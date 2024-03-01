@@ -214,10 +214,14 @@ tar -zxvf ./subread-2.0.6-Windows-x86_64.tar.gz
 <img width="379" alt="スクリーンショット 2024-02-28 16 38 29" src="https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/assets/85273234/abbf2fb5-db94-45bc-b0ea-b2bf5f80afa4">
 
 #### - PATHの追加
-絶対PATHの入力を不要にするため、コマンドごとにPATHを追加しておきます。
-下記のコマンドを実行します。
+絶対PATHの入力を不要にするため、コマンドごとにPATHを追加しておきます。\
+下記のコマンドを実行します。（ただし、xxxは各端末で設定されている任意のユーザー名に変更して下さい。）
+```
+export PATH=/home/xxx/bulksem/sratoolkit.3.0.10-win64/bin:/home/xxx/bulksem/FastQC:/home/xxx/bulksem/hisat2-2.2.1:/home/xxx/bulksem/subread-2.0.6-Windows-x86_64/bin$PATH
 ```
 
+ただし、Cygwinを終了するとリセットされるため、再度実行する必要があります。\
+（Cygwin終了の有無に関わらずPATHを追加することも可能ですが、今回は行いません。）
 
 ## macOS
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
@@ -364,6 +368,15 @@ cd ./subread-2.0.6-macOS-x86_64/bin
 ./featureCounts -v
 ```
 6. ```featureCounts v2.0.6```のメッセージが表示されれば、```hisat2```コマンドが実行可能になります。
+
+#### - PATHの追加
+絶対PATHの入力を不要にするため、コマンドごとにPATHを追加しておきます。\
+下記のコマンドを実行します。（ただし、xxxは各端末で設定されている任意のユーザー名に変更して下さい。）
+```
+export PATH=/Users/yosui4/bulksem/sratoolkit.3.0.10-mac-x86_64/bin:/Users/yosui4/bulksem/FastQC:/Users/yosui4/bulksem/hisat2-2.2.1:/Users/yosui4/bulksem/subread-2.0.6-macOS-x86_64/bin$PATH
+```
+ただし、ターミナルを終了するとリセットされるため、再度実行する必要があります。\
+（ターミナル終了の有無に関わらずPATHを追加することも可能ですが、今回は行いません。）
 
 ## 使用データ
 下記のpaired-endでシーケンスされた２サンプルのデータを使用します。\
