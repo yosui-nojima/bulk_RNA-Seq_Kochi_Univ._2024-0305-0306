@@ -795,12 +795,12 @@ RStudioを起動して下さい。\
 下記コードを実行
 ### Windows 11の場合
 ```
-sewtwd("C:/cygwin64/home/yosui4/bulksem/")
+setwd("C:/cygwin64/home/yosui4/bulksem/")
 ```
 
 ### macOSの場合
 ```
-sewtwd("/User/xxx/bulksem/")
+setwd("/User/xxx/bulksem/")
 ```
 
 featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。\
