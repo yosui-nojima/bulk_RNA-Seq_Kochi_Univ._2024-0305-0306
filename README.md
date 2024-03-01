@@ -327,6 +327,19 @@ IDEとして、最も一般的なのが『**RStudio**』です。
 6. 以下の画面が表示されればインストール成功。
 <img width="1186" alt="スクリーンショット 2023-05-12 18 10 25" src="https://github.com/yosui-nojima/statistics-C1_R/assets/85273234/c45549af-ddb6-42ac-93ab-083ce71c7434">
 
+#### - Rパッケージのインストール
+
+```
+install.packages("BiocManager")
+install.packages("ggplot2")
+install.packages("reshape2")
+BiocManager::install("GenomicFeatures")
+BiocManager::install("clusterProfiler")
+BiocManager::install("biomaRt")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("DOSE")
+```
+
 ### macOS
 macOSはUnixベースのOSですので、Cygwinのインストールは必要ありません。\
 また、javaはデフォルトでインストールされているため、基本的にはインストール不要です。
