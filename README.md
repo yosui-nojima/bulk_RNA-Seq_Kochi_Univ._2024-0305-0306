@@ -503,7 +503,7 @@ Trimmomaticを使って、アダプターの除去および低スコアな塩基
 下記はpaired-endでシーケンスしたFASTQファイルの場合です。
 ```
 cd ~/bulksem
-
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/Truseq_stranded_totalRNA_adapter.fa
 java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 4 -phred33 ./sample1_1_100K.fastq.gz ./sample1_2_100K.fastq.gz ./sample1_1_100K_trim_paired.fastq.gz ./sample1_1_100K_trim_unpaired.fastq.gz ./sample1_2_100K_trim_paired.fastq.gz ./sample1_2_100K_trim_unpaired.fastq.gz ILLUMINACLIP:Truseq_stranded_totalRNA_adapter.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:25
 ```
 - PE：レイアウトがpaired-endシーケンスのときに指定。single-endの場合はSEを指定します。
@@ -577,8 +577,17 @@ Duplidate readsの含まれている数を示しています。
 - ftpサイトの『dna』をクリックすると複数のファイルが閲覧できます。このうち、『Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz』を使用します。
 - 次はアノテーションファイルをダウンロードします。
 - Humanトップページの『Gene annotation』内の『Download GTF』をクリック。
-- ftpサイトの『Homo_sapiens.GRCh38.101.gtf.gz』をダウンロードします。
-- ※2021/12/15追記：バージョン104を使うとインデックス化でエラーで出るようです（恐らくEnsemblのファイルに問題あり）。バージョン101は問題ないことを確認していますので、本チュートリアルはバージョン101を使うことを前提にした内容に修正しました。
+- ftpサイトの『Homo_sapiens.GRCh38.111.gtf.gz』をダウンロードします。
+- リファレンスゲノムファイルとアノテーションファイルを解凍します。
+
+または、下記のコマンドを実行することでもダウンロード・解凍が可能です。
+```
+cd ~/bulksem
+curl -OL https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+curl -OL https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.111.gtf.gz
+```
 
 ## 5 リファレンスゲノムへのマッピング
 ### 5-1 リファレンスゲノムファイルのインデックス化
