@@ -692,7 +692,7 @@ Duplidate readsの含まれている数を示しています。
 <img width="862" alt="スクリーンショット 2021-12-08 13 13 07" src="https://user-images.githubusercontent.com/85273234/145147355-8b0a01f3-bbd7-4e5e-8e59-6e8745454f6c.png">
 
 ## 4 リファレンスゲノムファイル、アノテーションファイルの取得
-**ゲノムデータのダウンロードはかなり時間を要するため、本セミナーでは実行しません。今後の参考にして下さい。**
+**ゲノムデータのダウンロードはかなり時間を要するため、本セミナーでは実行しません。下記コマンドは今後の参考にして下さい。**
 
 トリミングしたリードは全ゲノム配列が記載されたリファレンスゲノムファイルにマッピングします。\
 [Ensembl](https://www.ensembl.org/)は、様々な生物種のゲノム配列情報が格納されているデータベースです。\
@@ -718,7 +718,7 @@ gunzip Homo_sapiens.GRCh38.101.gtf.gz
 
 ## 5 リファレンスゲノムへのマッピング
 ### 5-1 リファレンスゲノムファイルのインデックス化
-**ゲノムのインデックス化はかなり時間がかかるため、本セミナーでは実行しません。今後の参考にして下さい。**
+**ゲノムのインデックス化はかなり時間がかかるため、本セミナーでは実行しません。下記コマンドは今後の参考にして下さい。**
 
 4でダウンロードしたリファレンスゲノムファイルをインデックス化します。一般的にゲノムデータのサイズは大きくなりがちでありそのままでは処理時間がかかってしまうため、インデックス（目次）ファイルを作成して高速にアクセスできるようにします。\
 インデックス化に必要なプログラムは、多くの場合マッピングツールに含まれています。\
@@ -812,6 +812,7 @@ data <- read.table("./featureCounts_all_output.txt", header = TRUE, row.names = 
 ```
 
 続いて、GTFファイルからgene lengthを抽出します。```featureCounts_all_output.txt```を出力した際に使用したGTFファイルのバージョンがGRCh38.101だったため、そのバージョンのGTFファイルを指定しています。バージョンが違うとエラーになります。
+**下記スクリプトの実行は少し時間がかかるため、、本セミナーでは実行しません。今後の参考にして下さい。**
 ```
 library(GenomicFeatures)
 txdb <- makeTxDbFromGFF("./Homo_sapiens.GRCh38.101.gtf", format = "gtf")
@@ -823,7 +824,9 @@ exonic.gene.sizes.2 <- data.frame(as.matrix(exonic.gene.sizes.2))
 exonic.gene.sizes.2$ensembl_gene_id <- row.names(exonic.gene.sizes.2)
 
 ```
-上記スクリプトの3行目は少し時間がかかるため、今回は下記の様に[事前に用意したファイル](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_gene_sizes_2_GRCh38.101.rds)を読み込んで使用します。
+
+**今回は[事前に用意したファイル](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_gene_sizes_2_GRCh38.101.rds)を読み込んで使用します。**
+
 下記コマンドをCygwin(Windows 11)またはターミナル(macOS)で実行してファイルをダウンロードします。
 ```
 cd ~/bulksem
