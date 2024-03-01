@@ -29,7 +29,7 @@
 ## 目次
 ### [Windows 11](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#windows-11-1)
 ### [macOS](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#macos-1)
-### [使用するデータ](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#2-%E4%BD%BF%E7%94%A8%E3%83%87%E3%83%BC%E3%82%BF)(以降Windows 11, macOS間共通)
+### [使用するデータ](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#2-%E4%BD%BF%E7%94%A8%E3%83%87%E3%83%BC%E3%82%BF)(これ以降は一部を除いてWindows 11, macOS間共通)
 
 ## 1. 環境構築
 # Windows 11
@@ -774,12 +774,33 @@ featureCounts -O -M -T 18 -p -t exon -g gene_id -a ./Homo_sapiens.GRCh38.101.gtf
 
 遺伝子IDとカウント値のみを抽出します。
 ```
-cut -f1,7- sample_count.txt | grep -v ^\# > featureCounts_output.txt 
+cut -f1,7- ./sample_count.txt | grep -v ^\# > ./featureCounts_output.txt 
 ```
 
 ## 7 カウントデータをTPM値に変換する
-ここからは作業RStudioに移します。\
-featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。６で出力したファイルはPBL用のスモールデータです。ある疾患の公共RNA-Seqデータ（３９サンプル）のカウント値を出力したファイル[```featureCounts_all_output.txt```](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt)を用意しましたので、こちらを読み込んで下さい。
+６で出力したファイルはPBL用のスモールデータです。ある疾患の公共RNA-Seqデータ（３９サンプル）のカウント値を出力したファイル[```featureCounts_all_output.txt```](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt)を用意しました。
+下記コマンドをCygwin(Windows 11)またはターミナル(macOS)で実行してファイルをダウンロードします。
+
+```
+cd ~/bulksem
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt
+```
+
+ここからはRStudioで作業します。\
+RStudioを起動して下さい。\
+まず初めに作業ディレクトリを移動します。\
+下記コードを実行
+### Windows 11の場合
+```
+sewtwd("C:/cygwin64/home/yosui4/bulksem/")
+```
+
+### macOSの場合
+```
+sewtwd("/User/xxx/bulksem/")
+```
+
+featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。\
 ```
 data <- read.table("~/PBL/featureCounts_all_output.txt", header = TRUE, row.names = 1, sep = "\t")
 ```
@@ -796,7 +817,13 @@ exonic.gene.sizes.2 <- data.frame(as.matrix(exonic.gene.sizes.2))
 exonic.gene.sizes.2$ensembl_gene_id <- row.names(exonic.gene.sizes.2)
 
 ```
-上記スクリプトの3行目は少し時間がかかるため、今回は下記の様に[事前に用意したファイル](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_gene_sizes_2_GRCh38.101.rds)を読み込んで使用して下さい。
+上記スクリプトの3行目は少し時間がかかるため、今回は下記の様に[事前に用意したファイル](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_gene_sizes_2_GRCh38.101.rds)を読み込んで使用します。
+下記コマンドをCygwin(Windows 11)またはターミナル(macOS)で実行してファイルをダウンロードします。
+```
+cd ~/bulksem
+curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_gene_sizes_2_GRCh38.101.rds
+```
+RStudioに戻って
 ```
 exonic.gene.sizes.2 <- readRDS("~/PBL/exonic_gene_sizes_2_GRCh38.101.rds")
 gene.len <- exonic.gene.sizes.2$as.matrix.exonic.gene.sizes.2.
