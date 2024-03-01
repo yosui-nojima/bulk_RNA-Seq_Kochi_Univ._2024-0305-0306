@@ -798,12 +798,12 @@ RStudioを起動して下さい。\
 下記コードを実行
 ### Windows 11の場合
 ```
-setwd("C:/cygwin64/home/xxx/bulksem/")
+setwd("C:/cygwin64/home/xxx/bulksem/") #xxxは任意のユーザー名に変更すること。
 ```
 
 ### macOSの場合
 ```
-setwd("/User/xxx/bulksem/")
+setwd("/User/xxx/bulksem/") #xxxは任意のユーザー名に変更すること。
 ```
 
 featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。\
