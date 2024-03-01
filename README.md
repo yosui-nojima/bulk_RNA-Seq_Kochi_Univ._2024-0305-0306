@@ -798,7 +798,7 @@ RStudioを起動して下さい。\
 下記コードを実行
 ### Windows 11の場合
 ```
-setwd("C:/cygwin64/home/yosui4/bulksem/")
+setwd("C:/cygwin64/home/xxx/bulksem/")
 ```
 
 ### macOSの場合
