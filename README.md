@@ -28,7 +28,7 @@
 # bulk RNA-Seq解析ハンズオントレーニング
 ## 目次
 ### [Windows 11](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#windows-11-1)
-### [macOS](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#macos)
+### [macOS](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#macos-1)
 ### [使用するデータ](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/README.md#2-%E4%BD%BF%E7%94%A8%E3%83%87%E3%83%BC%E3%82%BF)(以降Windows 11, macOS間共通)
 
 ## 1. 環境構築
