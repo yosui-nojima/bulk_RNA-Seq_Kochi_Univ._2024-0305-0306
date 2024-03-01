@@ -778,7 +778,7 @@ cut -f1,7- ./sample_count.txt | grep -v ^\# > ./featureCounts_output.txt
 ```
 
 ## 7 カウントデータをTPM値に変換する
-６で出力したファイルはPBL用のスモールデータです。ある疾患の公共RNA-Seqデータ（３９サンプル）のカウント値を出力したファイル[```featureCounts_all_output.txt```](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt)を用意しました。
+６で出力したファイルは本セミナー用のスモールデータです。ある疾患の公共RNA-Seqデータ（３９サンプル）のカウント値を出力したファイル[```featureCounts_all_output.txt```](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/featureCounts_all_output.txt)を用意しました。
 下記コマンドをCygwin(Windows 11)またはターミナル(macOS)で実行してファイルをダウンロードします。
 
 ```
@@ -802,13 +802,13 @@ sewtwd("/User/xxx/bulksem/")
 
 featureCountsの出力ファイルからカウントデータを抽出したファイルを読み込みます。\
 ```
-data <- read.table("~/PBL/featureCounts_all_output.txt", header = TRUE, row.names = 1, sep = "\t")
+data <- read.table("./featureCounts_all_output.txt", header = TRUE, row.names = 1, sep = "\t")
 ```
 
 続いて、GTFファイルからgene lengthを抽出します。```featureCounts_all_output.txt```を出力した際に使用したGTFファイルのバージョンがGRCh38.101だったため、そのバージョンのGTFファイルを指定しています。バージョンが違うとエラーになります。
 ```
 library(GenomicFeatures)
-txdb <- makeTxDbFromGFF("~/PBL/Homo_sapiens.GRCh38.101.gtf", format = "gtf")
+txdb <- makeTxDbFromGFF("./Homo_sapiens.GRCh38.101.gtf", format = "gtf")
 exons.list.per.gene <- exonsBy(txdb, by = 'gene', use.names = FALSE) #featureCountsでtranscriptレベルでカウントした場合は、by引数の'gene'を'tx'に、use.names引数をTRUEに変更します。
 exonic.gene.sizes <- lapply(exons.list.per.gene, function(x){sum(width(reduce(x)))})
 exonic.gene.sizes.2 <- as.numeric(exonic.gene.sizes)
@@ -825,7 +825,7 @@ curl -OL https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/exonic_
 ```
 RStudioに戻って
 ```
-exonic.gene.sizes.2 <- readRDS("~/PBL/exonic_gene_sizes_2_GRCh38.101.rds")
+exonic.gene.sizes.2 <- readRDS("./exonic_gene_sizes_2_GRCh38.101.rds")
 gene.len <- exonic.gene.sizes.2$as.matrix.exonic.gene.sizes.2.
 names(gene.len) <- exonic.gene.sizes.2$ensembl_gene_id
 gene.list.order <- row.names(data)
@@ -861,6 +861,7 @@ for(i in 1:nrow(disease)){
 }
 wel <- data.frame(tpms, r1)
 wel <- na.omit(wel)
+library(ggplot2)
 ggplot(wel, aes(x = r1)) + geom_histogram(position = "dodge", alpha = 1, binwidth = 0.01)
 ```
 P値のヒストグラムから、小さなP値の比率が高いことから、患者・健常者間で発現差異のある遺伝子は多いと考えられます。\
@@ -906,7 +907,7 @@ DEGsを入力データとしてGene Ontology(GO)解析とKEGGパスウェイ解�
 library(biomaRt)
 DEG <- data.frame(row.names(wel[wel$Color == "DEG",]), wel[wel$Color == "DEG",]$FC)
 colnames(DEG) <- c("ensembl_gene_id", "FC")
-db <- useMart("ensembl", dataset = "hsapiens_gene_ensembl", version = "Ensembl Genes 104", host = "http://may2021.archive.ensembl.org")
+db <- useMart("ensembl", dataset = "hsapiens_gene_ensembl")
 hg <- useDataset("hsapiens_gene_ensembl", mart = db)
 res.gene <- getBM(attributes = c("ensembl_gene_id", "entrezgene_id"), filters = "ensembl_gene_id", values = DEG, mart = hg, uniqueRows=T)
 res.gene <- na.omit(res.gene)
@@ -914,7 +915,7 @@ DEG2 <- merge(res.gene, DEG, by = "ensembl_gene_id")
 ```
 上記４、５行はbiomaRt側のサーバーが停止しているとエラーとなります。その場合は[事前に用意したRData](https://github.com/nojima-q/2021-12-13-15_PBL_analysis/raw/main/biomaRt_104.RData)を読み込んで使用して下さい。
 ```
-load(file = "~/PBL/biomaRt_104.RData")
+load(file = "./biomaRt_104.RData")
 ```
 ### 9-1 GO解析
 GO解析では、Biological Process(BP)、Molecular Function(MF)、Cellular Component(CC)の３種類があります。\
