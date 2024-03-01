@@ -735,8 +735,8 @@ hisat2-build -p 4 --ss ./Homo_sapiens.GRCh38.101.ss --exon ./Homo_sapiens.GRCh38
 - -ss：extract_splice_sites.pyで作成したファイルを指定
 - -exon：extract_exons.pyで作成したファイルを指定
 
-**本セミナーでは下記リンクからインデックス化済みリフェレンスゲノムファイルを取得して下さい。**
-[https://www.dropbox.com/scl/fi/tjuf4u9s81rrg0wtya8s6/GRCh38.101.tar.gz?rlkey=63uz24zbvc7jjssez3tfdmpjl&dl=0](https://www.dropbox.com/scl/fi/tjuf4u9s81rrg0wtya8s6/GRCh38.101.tar.gz?rlkey=63uz24zbvc7jjssez3tfdmpjl&dl=0)
+**本セミナーでは下記リンクからインデックス化済みリフェレンスゲノムファイルを取得して下さい。**\
+[https://www.dropbox.com/scl/fi/tjuf4u9s81rrg0wtya8s6/GRCh38.101.tar.gz?rlkey=63uz24zbvc7jjssez3tfdmpjl&dl=0](https://www.dropbox.com/scl/fi/tjuf4u9s81rrg0wtya8s6/GRCh38.101.tar.gz?rlkey=63uz24zbvc7jjssez3tfdmpjl&dl=0)\
 ダウンロード後、```GRCh38.101.tar.gz```をWindows11の場合は```C:\cygwin64\home\xxx\bulksem```に、macOSの場合は```~/bulksem```に移動して下さい(```xxx```は任意のユーザー名に変更すること。)\
 下記コマンドを実行
 ```
