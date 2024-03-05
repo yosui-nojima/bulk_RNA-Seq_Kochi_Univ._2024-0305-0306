@@ -24,6 +24,7 @@
 
 ## 統計基礎講義資料
 下記よりダウンロード下さい。
+[https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/Kochi_DSDX_Seminar_20240305_compressed.pdf](https://github.com/yosui-nojima/bulk_RNA-Seq_Kochi_Univ._2024-0305-0306/blob/main/Kochi_DSDX_Seminar_20240305_compressed.pdf)
 
 # bulk RNA-Seq解析ハンズオントレーニング
 ## 目次
