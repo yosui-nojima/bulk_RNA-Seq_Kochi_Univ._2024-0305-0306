@@ -178,7 +178,7 @@ java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
 2. ```ダウンロード```ディレクトリに保存された```hisat2-2.2.1-source.zip```を、作業ディレクトリである```C:\cygwin64\home\xxx\bulksem```にドラッグ・アンド・ドロップでして下さい（xxxは各端末で設定されている任意のユーザー名です。）
 3. 下記コマンドを実行
 ```
-cd
+cd　~/bulksem
 unzip ~/hisat2-2.2.1-source.zip
 cd ~/hisat2-2.2.1
 make
