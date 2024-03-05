@@ -179,8 +179,8 @@ java -jar ./Trimmomatic-0.39/trimmomatic-0.39.jar -version
 3. 下記コマンドを実行
 ```
 cd　~/bulksem
-unzip ~/hisat2-2.2.1-source.zip
-cd ~/hisat2-2.2.1
+unzip ./hisat2-2.2.1-source.zip
+cd ./hisat2-2.2.1
 make
 ```
 ```make```でのコンパイルには30分ほどかかります。
