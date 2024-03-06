@@ -144,6 +144,7 @@ cd ./FastQC
 
 **#2024年3月6日更新**
 Windowsユーザーは下記サイトの```FastQC v0.11.9 (Win/Linux zip file) ```をクリックして、ファイルをダウンロードして下さい。\
+[https://kb.10xgenomics.com/hc/en-us/articles/360048465032-When-to-run-FastQC](https://kb.10xgenomics.com/hc/en-us/articles/360048465032-When-to-run-FastQC)
 ダウンロードしたファイルは```bulksem```ディレクトリには移動させず、ダウンロードディレクト下に置いたまま解凍し、```run_fastqc.bat```をダブルクリックして実行して下さい。アプリケーションが起動されます。
 
 #### - javaのインストール
