@@ -990,6 +990,23 @@ cnetplot(edox2, foldChange=geneList2, showCategory = 11, layout = "kk", fixed = 
 ```
 <img width="1094" alt="スクリーンショット 2021-12-12 18 25 39" src="https://user-images.githubusercontent.com/85273234/145707105-d7924e1d-5333-4ccb-9f06-69078c9049eb.png">
 
+### 図の保存方法
+1. 右下に図が表示されたのち、下図赤枠の```Export```をクリック
+
+<img width="1188" alt="スクリーンショット 2023-05-17 13 28 22" src="https://github.com/yosui-nojima/statistics-C1_R_2023/assets/85273234/5e1e3c5c-3382-4542-9a35-c83479d49cb0">
+
+2. ```Save a Image```をクリック
+
+<img width="1187" alt="スクリーンショット 2023-05-17 13 30 16" src="https://github.com/yosui-nojima/statistics-C1_R_2023/assets/85273234/e8e3c552-8fa5-4dad-aff6-c51eaaddf916">
+
+3. 任意の保存先、フォーマット、ファイル名を指定して、```Save```をクリック
+
+<img width="560" alt="スクリーンショット 2023-05-17 13 27 00" src="https://github.com/yosui-nojima/statistics-C1_R_2023/assets/85273234/4cfd11b9-8ff6-4734-87fd-4da8057beeb8">
+
+### コードをRスクリプトとして保存
+タブからFile → Saveをクリックし、エンコーディングの方法を選択（デフォルトのUTF-8で構わない）しOKをクリック。\
+任意のファイル名を入力し、拡張子（ファイル名以降の部分）は```.R```として```Save```をクリックし保存。（例:```20230517.R```）
+
 ## 今回使用したデータセット
 ### 元論文
 特発性肺線維症(Idiopathic pulmonary fibrosis; IPF)のデータを使用しました。\
