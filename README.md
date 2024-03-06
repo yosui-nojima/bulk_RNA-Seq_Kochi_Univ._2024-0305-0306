@@ -957,6 +957,8 @@ ego.result <- enrichGO(gene = as.character(DEG2$entrezgene_id),
 ego.result.simple <- simplify(ego.result) #GO termの冗長性を除去
 barplot(ego.result.simple, drop=TRUE, showCategory=30)
 dotplot(ego.result.simple)
+d <- GOSemSim::godata("org.Hs.eg.db", ont = "BP")    
+ego.result.simple <- enrichplot::pairwise_termsim(ego.result.simple, semData = d)
 emapplot(ego.result.simple)
 goplot(ego.result.simple)
 ```
@@ -975,7 +977,8 @@ ego.result.kegg <- enrichKEGG(gene = as.character(DEG2$entrezgene_id),
                                                qvalueCutoff  = 0.05)
 
 barplot(ego.result.kegg, showCategory=10)
-dotplot(ego.result.kegg, showCategory=10)
+dotplot(ego.result.kegg, showCategory=10)   
+ego.result.kegg <- enrichplot::pairwise_termsim(ego.result.kegg)
 emapplot(ego.result.kegg, showCategory=10)
 ```
 <img width="1146" alt="スクリーンショット 2021-12-12 18 14 53" src="https://user-images.githubusercontent.com/85273234/145706790-54ac8cc7-0ce1-440f-aeb9-2db8d6d95922.png">
