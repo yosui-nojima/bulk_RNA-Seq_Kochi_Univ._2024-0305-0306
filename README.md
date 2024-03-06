@@ -766,7 +766,11 @@ hisat2 -p 4 --dta -x ./GRCh38.101/GRCh38.101 -1 ./sample1_1_100K_trim_paired.fas
 - -S：出力するSAMファイル名
 - 2>：標準エラー出力。Mapping rate等をテキストファイルとして出力する。
 
-※バッチ処理をする場合は前述のawkコマンドを使用して下さい。
+**※2024年3月6日追記**
+※hisat2でバッチ処理をする場合は下記awkコマンドを参考にして下さい。
+```
+ ls sample*_1_100K.fastq.gz | cut -f1 -d_ | awk '{printf ("hisat2 -x ./GRCh38.101/GRCh38.101 -1 ./%s_1_100K.fastq.gz -2 ./%s_2_100K.fastq.gz -S ./%s_hisat2.sam\n", $1, $1, $1)}' > hisat2.sh
+```
 
 ## 6 マッピングデータから遺伝子ごとにリードのカウントデータを取得する
 マッピング結果であるSAMファイルからgeneごとまたはtranscriptごとにリードのカウント数を出力します。\
