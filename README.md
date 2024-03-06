@@ -756,7 +756,7 @@ tar -zxvf GRCh38.101.tar.gz
 ### 5-2 マッピング
 ゲノムへのマッピングを行います。今回は時間短縮のため、１０万リードランダムサンプリングしたFASTQファイル（最初にダウンロードしたファイル）を5-1で作成したインデックス化したリファレンスゲノムにマッピングします。
 ```
-hisat2 -p 4 --dta -x ./GRCh38.101 -1 ./sample1_1_100K_trim_paired.fastq.gz -2 ../sample1_2_100K_trim_paired.fastq.gz -S sample1_hisat2.sam 2> sample1_hisat2_log.txt
+hisat2 -p 4 --dta -x ./GRCh38.101/GRCh38.101 -1 ./sample1_1_100K_trim_paired.fastq.gz -2 ./sample1_2_100K_trim_paired.fastq.gz -S sample1_hisat2.sam 2> sample1_hisat2_log.txt
 ```
 - -p：スレッド数（使用するPC環境に合わせて設定して下さい。）
 - --dta：アセンブラーなど下流の解析ツールを使用する際のオプション。またメモリ使用量を改善する。
