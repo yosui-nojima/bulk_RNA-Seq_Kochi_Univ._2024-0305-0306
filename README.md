@@ -504,7 +504,7 @@ cd ./subread-2.0.6-macOS-x86_64/bin
 絶対PATHの入力を不要にするため、コマンドごとにPATHを追加しておきます。\
 下記のコマンドを実行します。（ただし、xxxは各端末で設定されている任意のユーザー名に変更して下さい。）
 ```
-export PATH=/Users/xxx/bulksem/sratoolkit.3.0.10-mac-x86_64/bin:/Users/xxx/bulksem/FastQC:/Users/yosui4/bulksem/hisat2-2.2.1:/Users/xxx/bulksem/subread-2.0.6-macOS-x86_64/bin:$PATH
+export PATH=/Users/xxx/bulksem/sratoolkit.3.0.10-mac-x86_64/bin:/Users/xxx/bulksem/FastQC:/Users/xxx/bulksem/hisat2-2.2.1:/Users/xxx/bulksem/subread-2.0.6-macOS-x86_64/bin:$PATH
 ```
 ただし、ターミナルを終了するとリセットされるため、再度実行する必要があります。\
 （ターミナル終了の有無に関わらずPATHを追加することも可能ですが、今回は行いません。）
